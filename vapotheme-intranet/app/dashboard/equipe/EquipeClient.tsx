@@ -275,7 +275,7 @@ export default function EquipeClient({ shops: initialShops, members: initialMemb
                         {shopMembers.length > 0 && (
                           <span style={{ marginLeft: 6 }}>
                             {shopMembers.map(m => (
-                              <span key={m.id} style={{ display: 'inline-block', width: 18, height: 18, borderRadius: '50%', background: m.color || '#888', marginRight: 3, verticalAlign: 'middle', title: m.full_name }} />
+                              <span key={m.id} style={{ display: 'inline-block', width: 18, height: 18, borderRadius: '50%', background: m.color || '#888', marginRight: 3, verticalAlign: 'middle' }} />
                             ))}
                           </span>
                         )}
