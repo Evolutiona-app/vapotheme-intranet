@@ -3,7 +3,14 @@ import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import type { Profile } from '@/types'
 
-const COLORS = ['#6964FC','#1D9E75','#D85A30','#378ADD','#D4537E','#639922','#BA7517','#5DCAA5','#7F77DD','#E24B4A']
+const COLORS = [
+  '#6964FC','#0F68F8','#1D9E75','#D85A30','#378ADD',
+  '#D4537E','#639922','#BA7517','#5DCAA5','#7F77DD',
+  '#E24B4A','#F23E8C','#19C6E0','#FF6B35','#A855F7',
+  '#06B6D4','#84CC16','#F59E0B','#EF4444','#8B5CF6',
+  '#10B981','#F97316','#EC4899','#14B8A6','#6366F1',
+  '#000000','#444441','#888780','#B4B2A9','#FFFFFF'
+]
 
 export default function AccountClient({ profile, email }: { profile: Profile, email: string }) {
   const [currentPwd, setCurrentPwd] = useState('')
