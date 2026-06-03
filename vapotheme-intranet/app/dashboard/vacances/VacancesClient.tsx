@@ -18,7 +18,6 @@ export default function VacancesClient({ currentProfile, profiles, leaves }: { c
       <h1 style={{ fontSize: 18, fontWeight: 600, marginBottom: 6 }}>Planning vacances {year}</h1>
       <p style={{ fontSize: 13, color: '#888', marginBottom: 20 }}>Vue annuelle — congés approuvés uniquement</p>
 
-      {/* Légende */}
       <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 16 }}>
         {profiles.map(p => (
           <div key={p.id} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 12, color: '#555' }}>
@@ -36,8 +35,8 @@ export default function VacancesClient({ currentProfile, profiles, leaves }: { c
             <div key={mi} className="card">
               <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 8 }}>{monthName}</div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 1 }}>
-                {DAY_LABELS.map(d => (
-                  <div key={d} style={{ textAlign: 'center', fontSize: 9, color: '#aaa', padding: '2px 0', fontWeight: 500 }}>{d}</div>
+                {DAY_LABELS.map((d, i) => (
+                  <div key={i} style={{ textAlign: 'center', fontSize: 9, color: '#aaa', padding: '2px 0', fontWeight: 500 }}>{d}</div>
                 ))}
                 {Array(firstDay).fill(null).map((_, i) => <div key={`e${i}`} />)}
                 {Array(daysInMonth).fill(null).map((_, i) => {
@@ -47,15 +46,18 @@ export default function VacancesClient({ currentProfile, profiles, leaves }: { c
                   const firstColor = onLeaveProfiles[0]?.color
 
                   return (
-                    <div key={day} style={{
-                      aspectRatio: '1', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: 9, borderRadius: isToday ? '50%' : 3, fontWeight: onLeaveProfiles.length > 0 ? 600 : 400,
-                      background: isToday ? '#6964FC' : firstColor ? firstColor + '33' : 'transparent',
-                      color: isToday ? '#fff' : firstColor || '#888',
-                      outline: onLeaveProfiles.length > 1 ? `1.5px solid ${onLeaveProfiles[1]?.color}` : 'none',
-                      outlineOffset: '-1px',
-                      title: onLeaveProfiles.map(p => p.full_name).join(', ')
-                    }}>
+                    <div
+                      key={day}
+                      style={{
+                        aspectRatio: '1', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontSize: 9, borderRadius: isToday ? '50%' : 3,
+                        fontWeight: onLeaveProfiles.length > 0 ? 600 : 400,
+                        background: isToday ? '#6964FC' : firstColor ? firstColor + '33' : 'transparent',
+                        color: isToday ? '#fff' : firstColor || '#888',
+                        outline: onLeaveProfiles.length > 1 ? `1.5px solid ${onLeaveProfiles[1]?.color}` : 'none',
+                        outlineOffset: '-1px',
+                      }}
+                    >
                       {day}
                     </div>
                   )

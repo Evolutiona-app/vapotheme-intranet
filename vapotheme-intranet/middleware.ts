@@ -26,11 +26,9 @@ export async function middleware(request: NextRequest) {
   if (!user && !path.startsWith('/login') && !path.startsWith('/set-password')) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
-
   if (user && path === '/login') {
     return NextResponse.redirect(new URL('/dashboard/accueil', request.url))
   }
-
   if (user && path === '/') {
     return NextResponse.redirect(new URL('/dashboard/accueil', request.url))
   }
