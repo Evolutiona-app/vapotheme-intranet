@@ -12,7 +12,7 @@
 
 ### 3. Configurer les variables d'environnement
 - Ouvre `.env.local`
-- Remplace les 3 valeurs par tes vraies clés Supabase
+- Remplace les 3 valeurs  par tes vraies clés Supabase
 
 ### 4. Lancer le projet
 ```bash
