@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --vt-violet: #6964FC;
+  --vt-blue: #0F68F8;
+  --vt-violet-dark: #5249CC;
+  --vt-violet-50: #E9E8FE;
+  --vt-ink: #201516;
+  --sidebar-bg: #13132b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f4f4f6;
+  color: #201516;
+}
+
+.sidebar { background: var(--sidebar-bg); }
+
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 16px; cursor: pointer;
+  color: rgba(255,255,255,0.5); font-size: 13px;
+  border-left: 2px solid transparent;
+  text-decoration: none; transition: all 0.15s;
+}
+.nav-item:hover { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.85); }
+.nav-item.active { background: rgba(105,100,252,0.2); color: #a09ffc; border-left-color: #6964FC; }
+
+.card {
+  background: #fff; border: 0.5px solid #e0e0e6;
+  border-radius: 12px; padding: 16px;
+}
+
+.btn-primary {
+  background: #6964FC; color: #fff; border: none;
+  padding: 8px 18px; border-radius: 8px;
+  font-size: 13px; cursor: pointer; font-weight: 500;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: #5249CC; }
+
+.btn-secondary {
+  background: transparent; border: 0.5px solid #ddd;
+  color: #666; padding: 8px 14px; border-radius: 8px;
+  font-size: 13px; cursor: pointer;
+}
+
+.badge { font-size: 11px; padding: 3px 8px; border-radius: 20px; font-weight: 500; display: inline-block; }
+.badge-violet { background: #EEEDFE; color: #3C3489; }
+.badge-green { background: #EAF3DE; color: #3B6D11; }
+.badge-yellow { background: #FAEEDA; color: #633806; }
+.badge-red { background: #FCEBEB; color: #A32D2D; }
+.badge-blue { background: #E6F1FB; color: #185FA5; }
+
+input, select, textarea {
+  width: 100%; padding: 8px 10px; font-size: 13px;
+  border: 0.5px solid #ddd; border-radius: 8px;
+  background: #f8f8fa; color: #201516;
+  outline: none; transition: border-color 0.15s;
+}
+input:focus, select:focus, textarea:focus { border-color: #6964FC; }
+
+label { font-size: 12px; color: #666; margin-bottom: 4px; display: block; }
