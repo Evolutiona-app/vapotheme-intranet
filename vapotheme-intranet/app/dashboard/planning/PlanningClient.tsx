@@ -172,7 +172,7 @@ export default function PlanningClient({ currentProfile, shops, profiles, templa
                   const shift = getShift(emp.id, day)
                   const st = shiftStyle(shift)
                   const isEditing = editingCell?.profileId === emp.id && editingCell?.day === day
-                  const empOut = renforts.find(r => r.emp === emp.id && r.day === day && r.to_shop_id !== activeShop)
+                 const empOut = renforts.find(r => r.profile_id === emp.id && r.to_shop_id !== activeShop)
                   return (
                     <td key={day} style={{ padding: '2px 2px' }}>
                       <div onClick={() => editMode && isAdmin && setEditingCell({ profileId: emp.id, day, current: shift })}
