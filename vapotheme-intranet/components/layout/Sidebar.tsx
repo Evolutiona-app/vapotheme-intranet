@@ -5,12 +5,13 @@ import { createClient } from '@/lib/supabase/client'
 import type { Profile } from '@/types'
 
 const navItems = [
-  { href: '/dashboard/compte', label: 'Mon compte', icon: '👤' },
+  
   { href: '/dashboard/accueil', label: 'Accueil', icon: '⌂' },
   { href: '/dashboard/conges', label: 'Congés', icon: '☀' },
   { href: '/dashboard/planning', label: 'Planning', icon: '📅' },
   { href: '/dashboard/notes', label: 'Notes', icon: '📝' },
   { href: '/dashboard/vacances', label: 'Vacances', icon: '🏖' },
+  { href: '/dashboard/compte', label: 'Mon compte', icon: '👤' },
 ]
 
 const adminItems = [
